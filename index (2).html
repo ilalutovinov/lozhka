@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ложка — рацион на неделю</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥄</text></svg>">
+<style>:root{--bg:#f6f9f2;--c:#fff;--t:#17261b;--m:#8a9a8c;--a:#3d9a5b;--b:#e4ece0;--tint:#eaf6ea;--w:#fdf3dc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#101812;--c:#18231b;--t:#eef4ec;--m:#93a695;--b:#2a3a2d;--tint:#1f3524;--w:#3a3320}}
+:root[data-theme=dark]{--bg:#101812;--c:#18231b;--t:#eef4ec;--m:#93a695;--b:#2a3a2d;--tint:#1f3524;--w:#3a3320}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--t);font:15px/1.4 "Nunito","Segoe UI",system-ui,sans-serif}
+.app{max-width:420px;margin:0 auto;padding:10px 16px 110px;min-height:100vh}
+.top{position:relative;text-align:center;height:40px}
+.logo{font-weight:900;font-size:20px;color:var(--a);line-height:40px}
+.back{position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--c);border:0;box-shadow:0 1px 6px rgba(0,0,0,.08);font-size:18px;color:var(--t);cursor:pointer}
+.seg{display:flex;gap:4px;margin:8px 0 6px}.seg i{flex:1;height:4px;border-radius:4px;background:var(--b)}.seg i.f{background:var(--a)}
+.lab{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--m)}.lab b{color:var(--t)}
+h1{font-size:24px;font-weight:900;margin:22px 0 4px;letter-spacing:-.4px}p.s{color:var(--m);margin:0 0 16px}
+.grid{display:grid;gap:10px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}
+button{font:inherit;color:var(--t);cursor:pointer}
+.tile{position:relative;background:var(--c);border:1.5px solid var(--b);border-radius:18px;padding:14px 6px;text-align:center;font-weight:800;font-size:13px}
+.tile .e{display:block;font-size:30px;margin-bottom:6px}.tile small{display:block;font-weight:600;color:var(--m);font-size:11px;margin-top:2px}
+.g4 .tile{padding:10px 2px;font-size:11px}.g4 .tile .e{font-size:24px}
+.tile.on{border-color:var(--a);background:var(--tint);color:var(--a)}
+.tile.on::after{content:"✓";position:absolute;top:6px;right:6px;width:18px;height:18px;border-radius:50%;background:var(--a);color:#fff;font-size:11px;line-height:18px}
+.card{background:var(--c);border:1.5px solid var(--b);border-radius:20px;padding:16px;margin-bottom:10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.lbl{font-size:11px;font-weight:800;letter-spacing:.8px;color:var(--m);text-transform:uppercase;margin:16px 0 8px}
+.cnt{display:flex;align-items:center;justify-content:center;gap:24px;margin:12px 0}.cnt b{font-size:44px;color:var(--a);font-weight:900;min-width:40px;text-align:center}
+.cnt button{width:50px;height:50px;border-radius:50%;border:0;background:var(--tint);color:var(--a);font-size:24px}
+.sw{width:46px;height:26px;border-radius:26px;background:var(--b);position:relative;border:0}.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s}.sw.on{background:var(--a)}.sw.on::after{left:23px}
+.note{border-left:4px solid var(--a);background:var(--tint);border-radius:12px;padding:10px 12px;margin:12px 0;font-size:13px}.note b{display:block}.note.w{background:var(--w);border-color:#e8a317}
+.big{font-size:46px;font-weight:900;color:var(--a);text-align:center;letter-spacing:-1px;margin:6px 0 0}.cen{text-align:center;color:var(--m);font-size:13px}
+input[type=range]{width:100%;accent-color:var(--a);margin:18px 0 4px}
+.fix{position:fixed;left:0;right:0;bottom:0;padding:14px 16px calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,var(--bg) 40%)}
+.go{display:block;width:100%;max-width:388px;margin:auto;padding:17px;border:0;border-radius:18px;background:linear-gradient(90deg,#a5dba5,#3d9a5b);font-weight:900;font-size:16px;box-shadow:0 8px 20px rgba(61,154,91,.28);color:#10301a}
+.go:disabled{opacity:.45;box-shadow:none}
+.dish{height:300px;border-radius:24px;background:linear-gradient(160deg,var(--tint),var(--c));border:1.5px solid var(--b);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.dish i{font-style:normal;font-size:110px;line-height:1}.dish b{font-size:22px;margin-top:14px}
+.act{display:flex;justify-content:center;gap:20px;margin:18px 0 6px}.act button{width:60px;height:60px;border-radius:50%;border:1.5px solid var(--b);background:var(--c);font-size:24px}.act .y{background:var(--a);border:0}
+.load{text-align:center;padding-top:80px}.load .ic{width:80px;height:80px;border-radius:50%;margin:auto;background:linear-gradient(135deg,#a5dba5,#3d9a5b);font-size:38px;line-height:80px}
+.ck{display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--b);color:var(--m);font-weight:700;text-align:left}.ck:last-child{border:0}.ck i{width:26px;height:26px;border-radius:50%;background:var(--b);font-style:normal;color:#fff;text-align:center;line-height:26px;font-size:13px}.ck.d{color:var(--t)}.ck.d i{background:var(--a)}
+.days{display:flex;gap:6px;overflow-x:auto;margin:14px 0}.days button{flex:0 0 auto;padding:9px 14px;border-radius:14px;border:1.5px solid var(--b);background:var(--c);font-weight:800}.days .on{background:var(--a);color:#fff;border-color:var(--a)}
+.meal{display:flex;gap:12px;align-items:center}.meal .e{font-size:34px}.meal div{flex:1}.meal small{color:var(--m);font-weight:700}.meal button{border:0;background:var(--tint);border-radius:12px;padding:8px 10px}
+table{width:100%;border-collapse:collapse}td{padding:8px 2px;border-bottom:1px solid var(--b);font-size:14px}td:last-child{text-align:right;font-weight:800}tr:last-child td{border:0}
+.ghost{display:block;margin:12px auto;background:none;border:0;color:var(--a);font-weight:800}
+</style></head>
+<body><div class="app" id="app"></div><script>const S=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
+const W=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const MEAT=['баранина','говядина','курица','рыба'],ANIM=[...MEAT,'яйца','молоко','творог'];
+// Цены: сом за кг/л, [базар, супермаркет]. ПРИМЕРНЫЕ — заменить на реальные.
+const P={рис:[110,130],баранина:[650,750],говядина:[600,700],курица:[330,380],морковь:[40,55],лук:[30,40],картофель:[45,60],мука:[55,65],яйца:[170,200],макароны:[90,110],гречка:[100,120],капуста:[35,50],помидор:[90,130],огурец:[80,120],масло:[220,260],молоко:[70,85],творог:[250,300],нут:[130,150],рыба:[400,480],тыква:[30,45],чечевица:[110,130]};
+// id, название, эмодзи, приёмы (b/l/d), ингредиенты (г на порцию), аллергены, нужна техника (любая из)
+const D=[
+['plov','Плов','🍚',['l','d'],{рис:90,баранина:90,морковь:90,лук:40,масло:20},[],['stove']],
+['lagman','Лагман','🍜',['l','d'],{мука:90,говядина:80,картофель:60,помидор:60,лук:40,масло:15},['gluten'],['stove']],
+['manty','Манты','🥟',['l','d'],{мука:90,баранина:100,лук:80,тыква:50},['gluten'],['stove','steam']],
+['shorpo','Шорпо','🍲',['l'],{говядина:90,картофель:120,морковь:50,лук:40},[],['stove']],
+['samsa','Самса','🥐',['b','l'],{мука:80,баранина:70,лук:70,масло:10},['gluten'],['oven']],
+['oromo','Оромо','🌀',['l','d'],{мука:80,картофель:100,говядина:50,лук:40},['gluten'],['stove','steam']],
+['kuur','Куурдак','🍖',['d'],{баранина:120,картофель:120,лук:60},[],['stove']],
+['chick','Курица с картофелем','🍗',['l','d'],{курица:150,картофель:150,лук:30,морковь:30},[],['oven','stove']],
+['grecha','Гречка с курицей','🥘',['l','d'],{гречка:80,курица:100,лук:30,морковь:30},[],['stove']],
+['gulash','Гуляш с гречкой','🍛',['l','d'],{говядина:100,гречка:70,лук:40,морковь:40,помидор:40},[],['stove']],
+['pasta','Макароны с курицей','🍝',['l','d'],{макароны:90,курица:90,помидор:60,лук:30},['gluten'],['stove']],
+['borsh','Борщ','🥣',['l'],{говядина:70,капуста:80,картофель:80,морковь:30,лук:30,помидор:30},[],['stove']],
+['fish','Рыба с картофелем','🐟',['d'],{рыба:150,картофель:150,лук:30,масло:5},['fish'],['oven','stove']],
+['egg','Яичница с помидорами','🍳',['b'],{яйца:100,помидор:80,масло:5},['eggs'],['stove','micro']],
+['syr','Сырники','🥞',['b'],{творог:120,яйца:30,мука:20,масло:10},['lactose','eggs','gluten'],['stove']],
+['gcm','Гречка с молоком','🥛',['b'],{гречка:60,молоко:150},['lactose'],['stove','micro']],
+['tkasha','Тыквенная каша','🎃',['b'],{тыква:200,рис:40,молоко:100},['lactose'],['stove','micro']],
+['salat','Салат с яйцом','🥗',['d'],{огурец:120,помидор:120,масло:10,яйца:50},['eggs'],['none']],
+['lent','Чечевичный суп','🫕',['l'],{чечевица:70,морковь:50,лук:40,картофель:80,масло:10},[],['stove']],
+['nut','Нут с овощами','🫘',['l','d'],{нут:80,помидор:80,лук:40,морковь:50,масло:10},[],['stove']],
+['kap','Тушёная капуста','🥬',['l','d'],{капуста:150,картофель:100,морковь:40,лук:30,масло:10},[],['stove'])
+].map(x=>({id:x[0],n:x[1],em:x[2],t:x[3],i:x[4],a:x[5],q:x[6]}));
+const SHOPS=[['🧺','Ошский базар',0],['🧺','Орто-Сай',0],['🧺','Дордой',0],['🛒','Супермаркет',1]];
+const MEALS={b:['☕','Завтрак'],l:['🍜','Обед'],d:['🍽️','Ужин']},DAYS=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+const ALG={nuts:['🌰','Орехи'],gluten:['🌾','Глютен'],lactose:['🥛','Лактоза'],eggs:['🥚','Яйца'],fish:['🐟','Рыба']};
+const DIS={лук:['🧅','Лук'],морковь:['🥕','Морковь'],баранина:['🐑','Баранина'],говядина:['🥩','Говядина'],курица:['🍗','Курица'],нут:['🫘','Нут'],помидор:['🍅','Помидоры'],молоко:['🥛','Молоко']};
+const EQ={stove:['🔥','Плита'],oven:['♨️','Духовка'],micro:['📡','Микроволновка'],steam:['🫧','Пароварка/мантышница']};
+const DIET=[['all','🍖','Всеядный','Ем всё'],['pesc','🐟','Пескетарианец','Рыба, без мяса'],['veg','🥗','Вегетарианец','Без мяса и рыбы'],['vegan','🌱','Веган','Только растительное']];
+const NAMES=['Магазин','Кто ест','Приёмы пищи','Бюджет','Тип питания','Вкусы','Аллергии','Кухня'],N=NAMES.length;
+let st=S('lz',{step:0,shops:[0],adults:2,kids:0,meals:{b:1,l:1,d:1},budget:5000,diet:'all',likes:[],seen:0,al:[],dis:[],eq:['stove','oven']});
+let res=null,day=0,ld=0;
+const fmt=n=>Math.round(n).toLocaleString('ru-RU')+' сом';
+const sv=()=>W('lz',st),fac=()=>st.adults+st.kids*.6;
+const pk=()=>st.shops.map(i=>SHOPS[i][2]);
+const price=k=>Math.min(...pk().map(i=>(P[k]||[0,0])[i]));
+const cost=d=>Object.entries(d.i).reduce((s,[k,g])=>s+g*price(k)/1000,0)*fac();
+const tg=(a,k)=>{const x=st[a],i=x.indexOf(k);i<0?x.push(k):x.splice(i,1);sv();draw()};
+const set=(k,v)=>{st[k]=v;sv();draw()};
+function pool(m){return D.filter(d=>{const ks=Object.keys(d.i);
+ if(d.a.some(a=>st.al.includes(a))||ks.some(k=>st.dis.includes(k)))return false;
+ if(!d.q.some(q=>q==='none'||st.eq.includes(q)))return false;
+ if(st.diet==='pesc'&&ks.some(k=>MEAT.includes(k)&&k!=='рыба'))return false;
+ if(st.diet==='veg'&&ks.some(k=>MEAT.includes(k)))return false;
+ if(st.diet==='vegan'&&ks.some(k=>ANIM.includes(k)))return false;
+ return d.t.includes(m)})}
+function gen(){const use={},slots=[];
+ for(let dy=0;dy<7;dy++)for(const m of ['b','l','d']){if(!st.meals[m])continue;
+  const p=pool(m);if(!p.length)return null;
+  const rec=slots.filter(s=>s.day>=dy-2).map(s=>s.d.id);
+  const sc=d=>(st.likes.includes(d.id)?3:0)+Math.random()*2-4*rec.includes(d.id)-(use[d.id]||0)*.8;
+  const d=p.slice().sort((a,b)=>sc(b)-sc(a))[0];use[d.id]=(use[d.id]||0)+1;slots.push({day:dy,m,d,p})}
+ for(let n=0;n<400&&tot(slots)>st.budget;n++){let ok=0;
+  for(const s of slots.slice().sort((a,b)=>cost(b.d)-cost(a.d))){
+   const alt=s.p.filter(d=>(use[d.id]||0)<4&&cost(d)<cost(s.d)-1).sort((a,b)=>cost(a)-cost(b))[0];
+   if(alt){use[s.d.id]--;use[alt.id]=(use[alt.id]||0)+1;s.d=alt;ok=1;break}}
+  if(!ok)break}
+ return slots}
+const tot=s=>s.reduce((a,x)=>a+cost(x.d),0);
+function swap(i){const s=res[i],alt=s.p.filter(d=>d.id!==s.d.id);if(alt.length){s.d=alt[Math.floor(Math.random()*alt.length)];draw()}}
+function shield(){const pp=st.budget/fac(),
+ r=pp>=1500?['','Хороший бюджет','Комфортно: есть из чего выбирать.']:pp>=900?['w','Бюджет впритык','Уложимся, но выбор блюд сузится.']:['w','Маловато','На такую сумму рацион может не собраться.'];
+ return `<div class="note ${r[0]}"><b>${r[1]}</b>${r[2]}</div>`}
+const tile=(on,e,n,sub,fn)=>`<button class="tile ${on?'on':''}" onclick="${fn}"><span class="e">${e}</span>${n}${sub?`<small>${sub}</small>`:''}</button>`;
+function step(){const s=st.step;let b='',ok=true,nx='Далее ›';
+ if(s===0){ok=st.shops.length>0;b=`<h1>Где покупаешь продукты?</h1><p class="s">Соберём меню из того, что есть на полках.</p><div class="grid g2">${SHOPS.map((x,i)=>tile(st.shops.includes(i),x[0],x[1],x[2]?'Сети':'Базар',`tg('shops',${i})`)).join('')}</div>`}
+ if(s===1)b=`<h1>Кто будет кушать?</h1><div class="card"><div class="lbl" style="text-align:center;margin-top:0">Взрослые</div><div class="cnt"><button onclick="set('adults',Math.max(1,st.adults-1))">−</button><b>${st.adults}</b><button onclick="set('adults',Math.min(8,st.adults+1))">+</button></div><div class="cen">Влияет на размер порций и объём закупки</div></div>
+ <div class="card"><div class="row"><div><b>Есть дети?</b><div class="cen" style="text-align:left">Порции меньше, меню мягче</div></div><button class="sw ${st.kids?'on':''}" onclick="set('kids',st.kids?0:1)"></button></div>${st.kids?`<div class="cnt"><button onclick="set('kids',Math.max(1,st.kids-1))">−</button><b>${st.kids}</b><button onclick="set('kids',Math.min(6,st.kids+1))">+</button></div>`:''}</div>
+ <div class="note"><b>Готовим на ${st.adults+st.kids} чел.</b>Каждое блюдо — на всех за одну готовку.</div>`;
+ if(s===2){ok=Object.values(st.meals).some(Boolean);b=`<h1>Сколько приёмов пищи в день?</h1><p class="s">Отметь, что готовишь.</p><div class="grid g3">${Object.entries(MEALS).map(([k,v])=>tile(st.meals[k],v[0],v[1],'',`st.meals.${k}=st.meals.${k}?0:1;sv();draw()`)).join('')}</div>`}
+ if(s===3)b=`<h1>Бюджет на неделю</h1><p class="s">Не будем предлагать то, что в него не влезет.</p><div class="big" id="bg">${fmt(st.budget)}</div><div class="cen" id="pp">≈ ${fmt(st.budget/fac())} на человека в неделю</div>
+ <input type="range" min="1000" max="40000" step="250" value="${st.budget}" oninput="st.budget=+this.value;sv();bg.textContent=fmt(st.budget);pp.textContent='≈ '+fmt(st.budget/fac())+' на человека в неделю';sh.innerHTML=shield()"><div class="row cen"><span>1 000</span><span>40 000+</span></div><div id="sh">${shield()}</div>`;
+ if(s===4)b=`<h1>Какой у тебя тип питания?</h1><p class="s">Это поможет подобрать подходящие блюда. Все блюда без свинины.</p><div class="grid g2">${DIET.map(x=>tile(st.diet===x[0],x[1],x[2],x[3],`set('diet','${x[0]}')`)).join('')}</div>`;
+ if(s===5){const dd=D.filter(d=>true),i=st.seen;
+  if(i>=dd.length)b=`<h1>Что тебе нравится?</h1><div class="dish"><i>🎉</i><b>Вкусовая карта готова</b><p class="s" style="margin:8px 0">Понравилось ${st.likes.length} блюд — этого хватит, чтобы собрать меню.</p><button class="ghost" onclick="st.likes=[];st.seen=0;sv();draw()">Пройти заново</button></div>`;
+  else{const d=dd[i];b=`<h1>Что тебе нравится?</h1><p class="s">Нажми ♥, если нравится, ✕ — если нет. Так мы соберём твою вкусовую карту.</p><div class="dish"><i>${d.em}</i><b>${d.n}</b><span class="cen">порция ≈ ${fmt(cost(d)/fac())}</span></div><div class="act"><button onclick="rate(0)">✕</button><button class="y" onclick="rate(1)">💚</button></div><div class="cen">${i+1} из ${dd.length}</div>`}}
+ if(s===6)b=`<h1>Аллергии и ограничения</h1><p class="s">Отметь всё, что не должно попасть в меню.</p><div class="lbl">Аллергии</div><div class="grid g4">${Object.entries(ALG).map(([k,v])=>tile(st.al.includes(k),v[0],v[1],'',`tg('al','${k}')`)).join('')}</div><div class="lbl">Не люблю</div><div class="grid g4">${Object.entries(DIS).map(([k,v])=>tile(st.dis.includes(k),v[0],v[1],'',`tg('dis','${k}')`)).join('')}</div>`;
+ if(s===7){nx='Посчитать рацион ›';ok=st.eq.length>0;b=`<h1>Что есть на кухне?</h1><p class="s">Отметь всё, чем реально готовишь. Рецепты подберём только под это.</p><div class="grid g2">${Object.entries(EQ).map(([k,v])=>tile(st.eq.includes(k),v[0],v[1],'',`tg('eq','${k}')`)).join('')}</div>`}
+ return `<div class="top">${s?'<button class="back" onclick="st.step--;draw()">‹</button>':''}<div class="logo">Ложка</div></div><div class="seg">${NAMES.map((_,i)=>`<i class="${i<=s?'f':''}"></i>`).join('')}</div><div class="lab"><b>${NAMES[s]}</b><span>Шаг ${s+1} из ${N}</span></div>${b}<div class="fix"><button class="go" ${ok?'':'disabled'} onclick="next()">${nx}</button></div>`}
+function rate(y){const d=D[st.seen];if(y)st.likes.push(d.id);st.seen++;sv();draw()}
+function next(){if(st.step<N-1){st.step++;sv();draw();return}
+ const r=gen();if(!r){alert('Под эти ограничения не нашлось блюд. Смягчи фильтры или добавь технику.');return}
+ res=r;day=0;ld=0;st.step=N;draw();const t=setInterval(()=>{ld++;draw();if(ld>=4)clearInterval(t)},650)}
+function loading(){const L=['Сверяем твои настройки','Подбираем блюда под кухню','Считаем корзину по ценам','Рацион готов'];
+ return `<div class="load"><div class="ic">🥗</div><h1 style="text-align:center">Собираем рацион…</h1><p class="s">Подбираем блюда под твой бюджет</p><div class="card">${L.map((x,i)=>`<div class="ck ${i<ld?'d':''}"><i>${i<ld?'✓':''}</i>${x}</div>`).join('')}</div></div>`}
+function result(){const total=tot(res),over=total>st.budget,list={};
+ res.forEach(s=>Object.entries(s.d.i).forEach(([k,g])=>list[k]=(list[k]||0)+g*fac()));
+ const ms=res.map((s,i)=>[s,i]).filter(([s])=>s.day===day);
+ return `<div class="top"><div class="logo">Ложка</div></div><h1>Твой рацион на неделю</h1><p class="s">${st.shops.map(i=>SHOPS[i][1]).join(', ')} · ${st.adults+st.kids} чел.</p>
+ <div class="card"><div class="big">${fmt(total)}</div><div class="cen">из ${fmt(st.budget)} бюджета</div></div>
+ <div class="note ${over?'w':''}"><b>${over?'Чуть дороже бюджета':'Укладываемся в бюджет'}</b>${over?'Увеличь бюджет, убери приём пищи или выбери базар.':'Осталось '+fmt(st.budget-total)+'.'}</div>
+ <div class="days">${DAYS.map((d,i)=>`<button class="${i===day?'on':''}" onclick="day=${i};draw()">${d}</button>`).join('')}</div>
+ ${ms.map(([s,i])=>`<div class="card meal"><span class="e">${s.d.em}</span><div><small>${MEALS[s.m][1]}</small><br><b>${s.d.n}</b><div class="cen" style="text-align:left">${fmt(cost(s.d))}</div></div><button onclick="swap(${i})">🔄</button></div>`).join('')}
+ <div class="lbl">Список покупок на неделю</div><div class="card"><table>${Object.entries(list).sort((a,b)=>b[1]-a[1]).map(([k,g])=>`<tr><td>${k[0].toUpperCase()+k.slice(1)}</td><td>${g>=1000?(g/1000).toFixed(1)+' кг':Math.max(10,Math.round(g/10)*10)+' г'}</td><td>${fmt(g*price(k)/1000)}</td></tr>`).join('')}</table></div>
+ <div class="cen">Цены примерные и могут отличаться.</div><button class="ghost" onclick="st.step=0;res=null;draw()">Пройти заново</button>`}
+function draw(){document.getElementById('app').innerHTML=st.step<N?step():(res?(ld<4?loading():result()):(st.step=0,step()));if(!(res&&st.step>=N&&ld>=4))window.scrollTo(0,0)}
+draw();
+</script></body></html>
