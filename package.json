@@ -1,0 +1,21 @@
+{
+  "name": "legkost",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node --env-file=.env.local scripts/seed.mjs",
+    "import:meals": "node --env-file=.env.local scripts/import-themealdb.mjs",
+    "test:planner": "node scripts/test-planner.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "leaflet": "^1.9.4",
+    "next": "14.2.15",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}
